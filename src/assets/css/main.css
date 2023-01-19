@@ -1,0 +1,49 @@
+  :root[data-theme=dark]  {
+    /* 模式切换变量，默认light模式 */
+	
+    --current-background-color: var(--dark-background-color);
+    --current-primary-color: var(--dark-primary-color);
+	--card-background-color:var(--dark-card-background-color);
+	--shadow-color:var(--dark-shadow-color);
+	
+    /* 深色主题 */
+	
+    --dark-primary-color: rgba(255,255,255,0.4);
+    --dark-background-color: #1b1d23;
+	--dark-card-background-color:#2e323c;
+	--dark-shadow-color:rgba(255,255,255,0.2);
+  }
+
+  :root[data-theme=light]  {
+    /* 模式切换变量，默认light模式 */
+	
+    --current-background-color: var(--light-background-color);
+    --current-primary-color: var(--light-primary-color);
+	--card-background-color:var(--light-card-background-color);
+	--shadow-color:var(--light-shadow-color);
+	
+    /* 浅色主题 */
+	
+    --light-primary-color: #1b1d23;
+    --light-background-color: #dfe7ef;
+	--light-card-background-color:#eef3f7;
+	--light-shadow-color:rgba(0,0,0,0.2);
+  }
+
+
+
+body {
+	background: var(--current-background-color);
+	font-family: "Bitter", serif;
+	transition: all .5s ease;
+}
+
+
+.wrapper {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 80vh;
+	background-size: cover;
+}
