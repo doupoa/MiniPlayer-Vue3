@@ -9,6 +9,11 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 
+////////////////////Config////////////////////
+const ServerURL = 'http://localhost:8080'     //服务端地址
+const RSAKey = ``                             //登录信息RSA加密公钥
+//////////////////////////////////////////////
+
 const reqCode = {
 	'100xx': '登录相关代码',
 	'10001': '登录成功',
@@ -48,8 +53,8 @@ app.component('font-awesome-icon', FontAwesomeIcon)
 
 app.use(VueAxios,axios).use(router)
 
-app.provide('$serverUrl','http://music.doupoa.site:3456') //服务端地址
-app.provide('$rsaKey',`MEgCQQCyjavchPVGtrWbVr+YkDuQpO6WxJlAi7wup73lDg6F5+SJsLv7yFMH8q72itw9FtEbDtyrPZm/wk/UiV2vz7KFAgMBAAE=`) //登录信息RSA加密公钥
+app.provide('$serverUrl',ServerURL) 
+app.provide('$rsaKey',RSAKey) 
 
 app.provide('$axios',app.config.globalProperties.axios)
 app.provide('$reqCode',reqCode)
